@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James Chisnell</title>
+  <meta name="description" content="Engineering student, train driver, change ringer and organist.">
+  <link rel="preload" as="image" href="img/me.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#">JC</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#links">Links</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle dark mode">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>James Chisnell</h1>
+        <p class="tagline">Engineering student, train driver, change ringer & organist.</p>
+        <div class="cta">
+          <a class="btn" href="https://umap.openstreetmap.fr/en/map/untitled-map_1016994" target="_blank" rel="noopener">Railway Map</a>
+          <a class="btn ghost" href="https://bb.ringingworld.co.uk/search.php?ringer=James+Chisnell" target="_blank" rel="noopener">Bellboard</a>
+        </div>
+      </div>
+      <picture class="hero-photo">
+        <img src="img/me.jpg" alt="Photo of James" width="480" height="480" />
+      </picture>
+    </section>
+
+    <section id="about" class="card-grid">
+      <article class="card">
+        <h2>About</h2>
+        <p>I’m an engineering student and qualified train driver with a love for campanology and pipe organ music. I enjoy building small, useful web tools and maps.</p>
+      </article>
+      <article class="card">
+        <h2>Now</h2>
+        <ul class="list">
+          <li>Studying engineering.</li>
+          <li>Ringing changes regularly.</li>
+          <li>Recording bells and arranging organ pieces.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="work">
+      <h2>Projects</h2>
+      <div class="tiles">
+        <a class="tile" href="https://umap.openstreetmap.fr/en/map/untitled-map_1016994" target="_blank" rel="noopener">
+          <h3>Personal Railway Map</h3>
+          <p>Routes and places that matter to me.</p>
+        </a>
+        <div class="tile disabled" role="group" aria-label="Bell Recordings">
+          <h3>Bell Recordings</h3>
+          <p>Coming soon.</p>
+        </div>
+        <div class="tile disabled" role="group" aria-label="Organ Music">
+          <h3>Organ Music</h3>
+          <p>Coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>Links</h2>
+      <ul class="links">
+        <li><a href="https://bb.ringingworld.co.uk/search.php?ringer=James+Chisnell" target="_blank" rel="noopener">Bellboard profile</a></li>
+        <li><a href="mailto:you@example.com">Email</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> James Chisnell · Built with plain HTML/CSS/JS</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
