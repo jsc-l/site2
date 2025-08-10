@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>James H Chisnell</title>
+  <meta name="description" content="Personal landing page for James H Chisnell." />
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --fg: #0f1115;
+      --muted: #6b7280;
+      --link: #0a58ca;
+      --card: #ffffff;
+      --ring: rgba(10,88,202,.25);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d12;
+        --fg: #e6e8eb;
+        --muted: #9aa0a6;
+        --link: #7aa7ff;
+        --card: #12151d;
+        --ring: rgba(122,167,255,.25);
+      }
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 50% -100px, rgba(10,88,202,.05), transparent),
+                  var(--bg);
+      color: var(--fg);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+    }
+    main {
+      width: 100%;
+      max-width: 560px;
+      background: var(--card);
+      border: 1px solid rgba(125,125,125,.15);
+      border-radius: 16px;
+      padding: 28px 24px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.05);
+      text-align: center;
+    }
+    .avatar {
+      width: 128px; height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 14px;
+      border: 2px solid rgba(125,125,125,.2);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 18px;
+      letter-spacing: .2px;
+    }
+    ul {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    a.link, .link-disabled {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid rgba(125,125,125,.18);
+      background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,0));
+      color: var(--fg);
+    }
+    a.link:hover, a.link:focus-visible {
+      outline: none;
+      border-color: var(--link);
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+    .emoji {
+      font-size: 20px;
+      line-height: 1;
+      filter: saturate(1.1);
+    }
+    .meta {
+      font-size: .95rem;
+      text-align: left;
+    }
+    .muted { color: var(--muted) }
+    .link-disabled {
+      cursor: not-allowed;
+      opacity: .6;
+      border-style: dashed;
+    }
+    footer {
+      margin-top: 16px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="avatar.jpg" alt="Portrait of James H Chisnell" class="avatar" />
+    <h1>James H Chisnell</h1>
+
+    <ul>
+      <li>
+        <a class="link" href="https://umap.openstreetmap.fr/en/map/untitled-map_1016994" target="_blank" rel="noopener">
+          <span class="emoji" aria-hidden="true">🗺️</span>
+          <span class="meta">
+            <strong>Railmap</strong><br>
+            <span class="muted">OpenStreetMap uMap</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://bb.ringingworld.co.uk/search.php?ringer=James+Chisnell" target="_blank" rel="noopener">
+          <span class="emoji" aria-hidden="true">🔔</span>
+          <span class="meta">
+            <strong>Bellboard</strong><br>
+            <span class="muted">Ringing World entries</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="link" id="recordings" href="#" aria-label="Bell Recordings link placeholder">
+          <span class="emoji" aria-hidden="true">🎙</span>
+          <span class="meta">
+            <strong>Bell Recordings</strong><br>
+            <span class="muted">Google Drive • coming soon</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://x.com/1indusi" target="_blank" rel="noopener">
+          <span class="emoji" aria-hidden="true">👥</span>
+          <span class="meta">
+            <strong>Social</strong><br>
+            <span class="muted">X profile</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+
+    <footer>
+      © <span id="year"></span> James H Chisnell
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const rec = document.getElementById('recordings');
+    if (rec && (!rec.getAttribute('href') || rec.getAttribute('href') === '#')) {
+      rec.addEventListener('click', e => e.preventDefault());
+      rec.classList.add('link-disabled');
+      rec.setAttribute('title', 'Link coming soon');
+      rec.setAttribute('aria-disabled', 'true');
+    }
+  </script>
+</body>
+</html>
